@@ -1,0 +1,19 @@
+            ; CALL XREF from main @ 0x401214
+┌ 48: sym.check (char *arg1);
+│           ; var char *s1 @ rbp-0x8
+│           ; arg char *arg1 @ rdi
+│           0x00401196      f30f1efa       endbr64
+│           0x0040119a      55             push rbp
+│           0x0040119b      4889e5         mov rbp, rsp
+│           0x0040119e      4883ec10       sub rsp, 0x10
+│           0x004011a2      48897df8       mov qword [s1], rdi         ; arg1
+│           0x004011a6      488b45f8       mov rax, qword [s1]
+│           0x004011aa      488d15530e00.  lea rdx, str.S3cr3t_        ; 0x402004 ; "S3cr3t!"
+│           0x004011b1      4889d6         mov rsi, rdx                ; const char *s2
+│           0x004011b4      4889c7         mov rdi, rax                ; const char *s1
+│           0x004011b7      e8d4feffff     call sym.imp.strcmp         ; int strcmp(const char *s1, const char *s2)
+│           0x004011bc      85c0           test eax, eax
+│           0x004011be      0f94c0         sete al
+│           0x004011c1      0fb6c0         movzx eax, al
+│           0x004011c4      c9             leave
+└           0x004011c5      c3             ret

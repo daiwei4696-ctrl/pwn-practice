@@ -1,0 +1,7 @@
+# 关键 gadget（从全量 ROPgadget 输出中筛选）
+# 命中条件：裸 ret，或 pop rdi ; ret
+
+$ ROPgadget --binary vuln | grep -E ": ret$|pop rdi ; ret"
+0x000000000040101a : ret
+
+# 全量 gadget 条数: 77

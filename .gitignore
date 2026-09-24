@@ -1,0 +1,17 @@
+# 编译产物
+# 注：故意保留 ELF 二进制，报告中记录的 md5 指纹需要可核对；
+# 如想忽略可自行取消下面三行注释。
+# /vuln
+# /vuln2
+# /crackme
+
+# 临时/调试
+__pycache__/
+*.pyc
+*.tmp
+*.swp
+
+# 运行日志：一律忽略，但 evidence/ 目录下的关键运行日志必须保留
+*.log
+!evidence/*.log
+!*/evidence/*.log

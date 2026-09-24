@@ -1,0 +1,22 @@
+# file
+vuln: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=83e56fa615077d7e4f4b699e0620ed68052af79b, for GNU/Linux 3.2.0, not stripped
+
+# md5sum
+9ed626703a9154cefc397c789394ddb7  vuln
+
+# checksec
+[*] '/mnt/d/逆向/逆向学习/practice/pwn-practice/01-stack-overflow/vuln'
+    Arch:       amd64-64-little
+    RELRO:      Partial RELRO
+    Stack:      No canary found
+    NX:         NX unknown - GNU_STACK missing
+    PIE:        No PIE (0x400000)
+    Stack:      Executable
+    RWX:        Has RWX segments
+    SHSTK:      Enabled
+    IBT:        Enabled
+    Stripped:   No
+
+# BuildID
+    Build ID: 83e56fa615077d7e4f4b699e0620ed68052af79b
+

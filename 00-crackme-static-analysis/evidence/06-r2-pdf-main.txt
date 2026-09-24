@@ -1,0 +1,38 @@
+            ; DATA XREF from entry0 @ 0x4010c8
+┌ 118: int main (int argc, char **argv, char **envp);
+│           ; var int64_t var_40h @ rbp-0x40
+│           0x004011c6      f30f1efa       endbr64
+│           0x004011ca      55             push rbp
+│           0x004011cb      4889e5         mov rbp, rsp
+│           0x004011ce      4883ec40       sub rsp, 0x40
+│           0x004011d2      488d05330e00.  lea rax, str.pw:_           ; 0x40200c ; "pw: "
+│           0x004011d9      4889c7         mov rdi, rax                ; const char *format
+│           0x004011dc      b800000000     mov eax, 0
+│           0x004011e1      e89afeffff     call sym.imp.printf         ; int printf(const char *format)
+│           0x004011e6      488d45c0       lea rax, [var_40h]
+│           0x004011ea      4889c6         mov rsi, rax
+│           0x004011ed      488d051d0e00.  lea rax, str._63s           ; 0x402011 ; "%63s"
+│           0x004011f4      4889c7         mov rdi, rax                ; const char *format
+│           0x004011f7      b800000000     mov eax, 0
+│           0x004011fc      e89ffeffff     call sym.imp.__isoc99_scanf ; int scanf(const char *format)
+│           0x00401201      83f801         cmp eax, 1                  ; 1
+│       ┌─< 0x00401204      7407           je 0x40120d
+│       │   0x00401206      b801000000     mov eax, 1
+│      ┌──< 0x0040120b      eb2d           jmp 0x40123a
+│      ││   ; CODE XREF from main @ 0x401204
+│      │└─> 0x0040120d      488d45c0       lea rax, [var_40h]
+│      │    0x00401211      4889c7         mov rdi, rax                ; char *arg1
+│      │    0x00401214      e87dffffff     call sym.check
+│      │    0x00401219      85c0           test eax, eax
+│      │┌─< 0x0040121b      7409           je 0x401226
+│      ││   0x0040121d      488d05f20d00.  lea rax, [0x00402016]       ; "yes"
+│     ┌───< 0x00401224      eb07           jmp 0x40122d
+│     │││   ; CODE XREF from main @ 0x40121b
+│     ││└─> 0x00401226      488d05ed0d00.  lea rax, [0x0040201a]       ; "no"
+│     ││    ; CODE XREF from main @ 0x401224
+│     └───> 0x0040122d      4889c7         mov rdi, rax                ; const char *s
+│      │    0x00401230      e83bfeffff     call sym.imp.puts           ; int puts(const char *s)
+│      │    0x00401235      b800000000     mov eax, 0
+│      │    ; CODE XREF from main @ 0x40120b
+│      └──> 0x0040123a      c9             leave
+└           0x0040123b      c3             ret

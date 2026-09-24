@@ -1,0 +1,27 @@
+000000000040120e <vuln>:
+  40120e:	f3 0f 1e fa          	endbr64
+  401212:	55                   	push   rbp
+  401213:	48 89 e5             	mov    rbp,rsp
+  401216:	48 83 ec 40          	sub    rsp,0x40
+  40121a:	48 8d 05 fd 0d 00 00 	lea    rax,[rip+0xdfd]        # 40201e <_IO_stdin_used+0x1e>
+  401221:	48 89 c7             	mov    rdi,rax
+  401224:	b8 00 00 00 00       	mov    eax,0x0
+  401229:	e8 82 fe ff ff       	call   4010b0 <printf@plt>
+  40122e:	48 8b 05 0b 2e 00 00 	mov    rax,QWORD PTR [rip+0x2e0b]        # 404040 <stdout@GLIBC_2.2.5>
+  401235:	48 89 c7             	mov    rdi,rax
+  401238:	e8 93 fe ff ff       	call   4010d0 <fflush@plt>
+  40123d:	48 8d 45 c0          	lea    rax,[rbp-0x40]
+  401241:	ba 00 01 00 00       	mov    edx,0x100
+  401246:	48 89 c6             	mov    rsi,rax
+  401249:	bf 00 00 00 00       	mov    edi,0x0
+  40124e:	e8 6d fe ff ff       	call   4010c0 <read@plt>
+  401253:	48 8d 45 c0          	lea    rax,[rbp-0x40]
+  401257:	48 89 c6             	mov    rsi,rax
+  40125a:	48 8d 05 c5 0d 00 00 	lea    rax,[rip+0xdc5]        # 402026 <_IO_stdin_used+0x26>
+  401261:	48 89 c7             	mov    rdi,rax
+  401264:	b8 00 00 00 00       	mov    eax,0x0
+  401269:	e8 42 fe ff ff       	call   4010b0 <printf@plt>
+  40126e:	90                   	nop
+  40126f:	c9                   	leave
+  401270:	c3                   	ret
+

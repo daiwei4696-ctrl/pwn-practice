@@ -1,0 +1,6 @@
+
+crackme:     file format elf64-x86-64
+
+Contents of section .rodata:
+ 402000 01000200 53336372 33742100 70773a20  ....S3cr3t!.pw: 
+ 402010 00253633 73007965 73006e6f 00        .%63s.yes.no.   

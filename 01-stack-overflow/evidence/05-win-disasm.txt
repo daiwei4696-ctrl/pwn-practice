@@ -1,0 +1,17 @@
+00000000004011d6 <win>:
+  4011d6:	f3 0f 1e fa          	endbr64
+  4011da:	55                   	push   rbp
+  4011db:	48 89 e5             	mov    rbp,rsp
+  4011de:	48 8d 05 1f 0e 00 00 	lea    rax,[rip+0xe1f]        # 402004 <_IO_stdin_used+0x4>
+  4011e5:	48 89 c7             	mov    rdi,rax
+  4011e8:	e8 a3 fe ff ff       	call   401090 <puts@plt>
+  4011ed:	48 8b 05 4c 2e 00 00 	mov    rax,QWORD PTR [rip+0x2e4c]        # 404040 <stdout@GLIBC_2.2.5>
+  4011f4:	48 89 c7             	mov    rdi,rax
+  4011f7:	e8 d4 fe ff ff       	call   4010d0 <fflush@plt>
+  4011fc:	48 8d 05 13 0e 00 00 	lea    rax,[rip+0xe13]        # 402016 <_IO_stdin_used+0x16>
+  401203:	48 89 c7             	mov    rdi,rax
+  401206:	e8 95 fe ff ff       	call   4010a0 <system@plt>
+  40120b:	90                   	nop
+  40120c:	5d                   	pop    rbp
+  40120d:	c3                   	ret
+

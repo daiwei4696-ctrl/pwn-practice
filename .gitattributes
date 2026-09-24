@@ -1,0 +1,10 @@
+# 统一行尾为 LF：这些脚本都要在 WSL bash 下执行，
+# 若被 Git 转成 CRLF 会直接报 "bash\r: command not found"
+* text=auto eol=lf
+*.sh  text eol=lf
+*.py  text eol=lf
+*.c   text eol=lf
+*.h   text eol=lf
+*.md  text eol=lf
+*.json text eol=lf
+*.txt text eol=lf

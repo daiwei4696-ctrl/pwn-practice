@@ -1,0 +1,13 @@
+# 关键 gadget（从全量 ROPgadget 输出中筛选）
+# 命中条件：裸 ret，或 pop rdi ; ret
+
+$ ROPgadget --binary vuln2 | grep -E ": ret$|pop rdi ; ret"
+0x00000000004011b9 : cli ; push rbp ; mov rbp, rsp ; pop rdi ; ret
+0x00000000004011b6 : endbr64 ; push rbp ; mov rbp, rsp ; pop rdi ; ret
+0x00000000004011bc : mov ebp, esp ; pop rdi ; ret
+0x00000000004011bb : mov rbp, rsp ; pop rdi ; ret
+0x00000000004011be : pop rdi ; ret
+0x00000000004011ba : push rbp ; mov rbp, rsp ; pop rdi ; ret
+0x000000000040101a : ret
+
+# 全量 gadget 条数: 81

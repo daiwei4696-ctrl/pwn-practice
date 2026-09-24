@@ -1,0 +1,10 @@
+00000000004011b6 <pop_rdi_ret>:
+  4011b6:	f3 0f 1e fa          	endbr64
+  4011ba:	55                   	push   rbp
+  4011bb:	48 89 e5             	mov    rbp,rsp
+  4011be:	5f                   	pop    rdi
+  4011bf:	c3                   	ret
+  4011c0:	90                   	nop
+  4011c1:	5d                   	pop    rbp
+  4011c2:	c3                   	ret
+

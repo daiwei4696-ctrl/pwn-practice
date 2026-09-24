@@ -1,0 +1,24 @@
+[*] '/mnt/d/逆向/逆向学习/practice/pwn-practice/01-stack-overflow/vuln'
+    Arch:       amd64-64-little
+    RELRO:      Partial RELRO
+    Stack:      No canary found
+    NX:         NX unknown - GNU_STACK missing
+    PIE:        No PIE (0x400000)
+    Stack:      Executable
+    RWX:        Has RWX segments
+    SHSTK:      Enabled
+    IBT:        Enabled
+    Stripped:   No
+pad ret count = 0 : NO SHELL (timeout)
+pad ret count = 1 : GOT SHELL -> ===DONE===
+pad ret count = 2 : NO SHELL (timeout)
+
+=== gdb 验证信号 ===
+n=0
+[31m[1mpwndbg: [0m[31m[0m[91mloaded 199 pwndbg commands. Type [35mpwndbg [filter][0m[91m for a list.[0m
+[31m[1mpwndbg: [0m[31m[0m[91mcreated 12 GDB functions (can be used with print/break). Type [35mhelp function[0m[91m to see them.[0m
+
+ptrace: No such process.
+The program has no registers now.
+No stack.
+

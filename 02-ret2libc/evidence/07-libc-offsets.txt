@@ -1,0 +1,19 @@
+# libc 文件
+/usr/lib/x86_64-linux-gnu/libc.so.6: ELF 64-bit LSB shared object, x86-64, version 1 (GNU/Linux), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=a4a7992a8e66555c8141ab2a08a8465ff6e0ea65, for GNU/Linux 3.2.0, stripped
+
+# md5sum
+0d071be36a77f5c2bde1023f3fa81fa0  /usr/lib/x86_64-linux-gnu/libc.so.6
+
+# BuildID
+    Build ID: a4a7992a8e66555c8141ab2a08a8465ff6e0ea65
+
+Displaying notes found in: .note.ABI-tag
+
+# 关键符号偏移（readelf -sW）
+   235: 0000000000087cc0   550 FUNC    WEAK   DEFAULT   17 puts@@GLIBC_2.2.5
+  1050: 0000000000058750    45 FUNC    WEAK   DEFAULT   17 system@@GLIBC_2.2.5
+  1593: 00000000000ef030    37 FUNC    WEAK   DEFAULT   17 execve@@GLIBC_2.2.5
+  1705: 0000000000058750    45 FUNC    GLOBAL DEFAULT   17 __libc_system@@GLIBC_PRIVATE
+
+# /bin/sh 字符串偏移
+offset of "/bin/sh" = 0x1cc42f

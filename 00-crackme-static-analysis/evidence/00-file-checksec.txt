@@ -1,0 +1,18 @@
+# file
+crackme: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=550180094fb49c0c9ccdcf58ff1d9dedf140392d, for GNU/Linux 3.2.0, not stripped
+
+# md5sum
+087151029fa5219d7fe6b41e9b98463e  crackme
+
+# checksec
+[*] '/mnt/d/逆向/逆向学习/practice/pwn-practice/00-crackme-static-analysis/crackme'
+    Arch:       amd64-64-little
+    RELRO:      Partial RELRO
+    Stack:      No canary found
+    NX:         NX unknown - GNU_STACK missing
+    PIE:        No PIE (0x400000)
+    Stack:      Executable
+    RWX:        Has RWX segments
+    SHSTK:      Enabled
+    IBT:        Enabled
+    Stripped:   No

@@ -1,0 +1,28 @@
+############ pad ret count = 0 ############
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+input> you said: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAÖ@
+
+Program received signal SIGSEGV, Segmentation fault.
+0x00007ffff7c5843b in do_system (line=0x402016 "/bin/sh") at ../sysdeps/posix/system.c:148
+rip            0x7ffff7c5843b      0x7ffff7c5843b <do_system+363>
+rsp            0x7fffffffdbf8      0x7fffffffdbf8
+=> 0x7ffff7c5843b <do_system+363>:	movaps XMMWORD PTR [rsp+0x50],xmm0
+   0x7ffff7c58440 <do_system+368>:	call   0x7ffff7d0edd0 <__GI___posix_spawn>
+   0x7ffff7c58445 <do_system+373>:	mov    rdi,rbx
+#0  0x00007ffff7c5843b in do_system (line=0x402016 "/bin/sh") at ../sysdeps/posix/system.c:148
+#1  0x000000000040120b in win ()
+#2  0x00007fffffffe050 in ?? ()
+
+############ pad ret count = 1 ############
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+input> you said: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA@
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+process 189 is executing new program: /usr/bin/dash
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+process 190 is executing new program: /usr/bin/dash
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+The program has no registers now.
+No registers.
+No stack.
+
