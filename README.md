@@ -10,6 +10,7 @@
 | [`00-crackme-static-analysis/`](00-crackme-static-analysis/) | Ghidra + radare2 交叉分析小 crackme | 四段式分析报告、双工具互证 |
 | [`01-stack-overflow/`](01-stack-overflow/) | ret2text 拿 shell | cyclic 定偏移、**64 位栈对齐**、gdb 抓 `movaps` SIGSEGV |
 | [`02-ret2libc/`](02-ret2libc/) | ret2libc 完整泄露链 | libc 泄露与反查、ROP 链、本地/远程双模式 |
+| [`Writeup-04-ret2libc.md`](Writeup-04-ret2libc.md) | 作品集 #4：ret2libc 从本地到远程 | 栈对齐"数两次"法则、BuildID 反查 |
 
 ## 报告规范（M3 验收要求）
 
